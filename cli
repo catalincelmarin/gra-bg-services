@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if at least one argument is provided
+if [ "$#" -eq 0 ]; then
+    echo "Usage: $0 <command> [options]"
+    exit 1
+fi
+
+# Resolve the first running service container from docker-compose
+container_id=$(sudo docker-compose ps -q | head -n 1)
+
+if [ -z "$container_id" ]; then
+    echo "Could not determine a running docker-compose container."
+    exit 1
+fi
+
+# Execute the CLI inside the container, preserving argument quoting
+sudo docker exec -it "$container_id" poetry run cli "$@"

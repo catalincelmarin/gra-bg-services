@@ -1,0 +1,13 @@
+pubs: []
+#  - name: test-topic
+#    topic: test-topic
+#    contentType: application/json
+#    server: KAFKA_SERVER_1
+
+subs: []
+#  - name: test-topic
+#    group_id: sub_one
+#    topic: test-topic
+#    contentType: application/json
+#    server: KAFKA_SERVER_1
+#    handler: app.ext.kafka.Handlers.Handlers.sub1

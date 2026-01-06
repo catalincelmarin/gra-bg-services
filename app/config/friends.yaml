@@ -1,0 +1,18 @@
+friends: []
+#  datasets:
+#    route: app.ext.datasets.background.tasks
+#    queue: odapp_datasets
+#  x_bots:
+#    route: app.ext.xbot.background.tasks
+#    queue: x_bots
+#  syncer:
+#    route: app.ext.syncer.background.tasks
+#    queue: workers_q
+#  drapht:
+#    route: app.ext.drapht.background.tasks
+#    queue: drapht_q
+#  byzantium:
+#    route: app.ext.byzantium.background.tasks
+#    queue: byzantium_q
+
+

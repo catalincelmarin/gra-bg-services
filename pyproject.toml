@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "app"
+version = "0.0.0"
+description = "root-template for kimera"
+authors = ["Catalin Marin"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+click = "^8.1.2"
+rich = "*"
+websocket-client = "*"
+markdownify = "*"
+
+
+# auth = { git = "https://github.com/catalincelmarin/kimp-ext-auth.git", tag="v1.0.0"}
+# byzantium = { git = "https://github.com/catalincelmarin/kimp-ext-byzantium.git", tag="v1.0.0"}
+kimcom = { git = "https://github.com/catalincelmarin/kimera-common.git", tag="v2.0.4"}
+# kimeraai = {git = "https://github.com/catalincelmarin/kimp-ext-kimeraai.git", tag="v1.0.0" }
+# kimera-tsdata = { path = "app/ext/tsdata", develop=false}
+# kimera-ml = {git = "https://github.com/catalincelmarin/kimp-ext-kimeraml.git", tag="v1.0.0" }
+kimp = "0.1.6"
+#celery="*"
+#confluent-kafka = "*"
+
+
+[tool.poetry.scripts]
+main = "app.src.main:start"
+cli = "app.src.cli:start"
+
+[tool.kimp]
+extensions = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
