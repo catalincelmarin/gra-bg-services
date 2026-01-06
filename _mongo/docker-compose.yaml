@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  kimera-mongo:
+    image: mongo:latest
+    ports:
+      - 27037:27017
+    volumes:
+      - kimera-data:/data/db
+    restart: unless-stopped
+    logging:
+      driver: "none"
+
+    networks:
+      - kimera-net
+
+networks:
+    kimera-net:
+      name: kimera-net
+      driver: bridge
+
+volumes:
+  kimera-data:

@@ -1,0 +1,37 @@
+stores:
+#files
+  - name: _root
+    type: files
+    path: /filestore
+  - name: _public
+    type: files
+    path: /filestore/_public
+  - name: _tmp
+    type: files
+    path: /filestore/_tmp
+  - name: _vectors
+    type: files
+    path: /filestore/_vectors
+#mem
+#  - name: default
+#    type: mem
+#    uri: REDIS_CACHE
+#mongo
+  - name: _root
+    type: nosql
+    uri: DEFAULT_STORE
+
+# vector
+#  - name: vectorizer
+#    type: vector
+#    collection: vectors
+#    uri: VECTOR_STORE
+#elastic
+#  - name: _root
+#    index: .
+#    type: elastic
+#    uri: ODAPP_ES
+#  - name: od-app
+#    index: overdrive-logs
+#    type: elastic
+#    uri: ODAPP_ES

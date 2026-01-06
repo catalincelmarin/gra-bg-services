@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if at least one argument is provided
+if [ "$#" -eq 0 ]; then
+    echo "Usage: $0 <command> [options]"
+    exit 1
+fi
+
+# Join all arguments into a single string
+args="$*"
+
+# Execute the docker command
+sudo docker exec -it $(sudo docker-compose ps | grep - | awk '{print $1}') bash -c "poetry run cli $args"

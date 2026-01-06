@@ -1,0 +1,53 @@
+[tool.poetry]
+package-mode = true
+name = "app"
+version = "0.1.0"
+description = "kimera-root"
+authors = ["catalincelmarin <catalin@orson.ro>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.1.2"
+#aiogram = "3.14.0"
+rich = "*"
+#python-binance = "*"
+#openpyxl = "*"
+#seaborn = "*"
+#matplotlib = "*"
+#pandas = "*"
+#numpy = "*"
+#scikit-learn = "*"
+requests-oauthlib = "*"
+imgkit = "*"
+kimp = "0.1.6"
+
+#playwright = "^1.43.0"
+
+common = { git = "git@github.com:catalincelmarin/kimera-common.git", branch="minimal"}
+#mplfinance = "^0.12.10b0"
+#ta = "^0.11.0"
+#pandas_ta = "*"
+#tradingview_ta = "*"
+jmespath = "^1.0.1"
+websocket-client = "*"
+#sqlalchemy = "^2.0"
+#asyncmy = "^0.2.8"
+#faiss-cpu = "*"
+#sentence-transformers = "*"
+#
+#spacy = "*"  # Added for NLP processing
+#nltk = "*"  # Added for sentence tokenization
+#sentence-transformers = "^4.0.2"
+
+[tool.poetry.scripts]
+main = "app.src.main:start"
+cli = "app.src.cli:start"
+
+
+[tool.kimp]
+extensions = ["app/ext/byzantium"]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

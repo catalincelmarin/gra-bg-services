@@ -1,0 +1,27 @@
+
+services:
+  kimera-root:
+    hostname: ${TAG}
+    restart: unless-stopped
+    build:
+      context: .
+      args:
+        - API_GITHUB=${API_GITHUB}
+    volumes:
+      - ./app:/home/jazzms/app
+      - ./filestore:/filestore
+    ports:
+      - ${EXTERNAL_PORT}:8000
+    env_file:
+      - .env
+
+    networks:
+      - kimera-net
+
+
+
+networks:
+    kimera-net:
+      name: kimera-net
+      driver: bridge
+      external: true

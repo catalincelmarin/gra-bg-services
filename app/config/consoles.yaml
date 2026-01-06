@@ -1,0 +1,3 @@
+consoles:
+    - name: admin
+      classPath: app.src.console.JazzCLI
