@@ -1,23 +1,23 @@
 version: "3.9"
 
 services:
-  kimera-mongo:
+  gra-mongo:
     image: mongo:latest
     ports:
       - 27037:27017
     volumes:
-      - kimera-data:/data/db
+      - gra-data:/data/db
     restart: unless-stopped
     logging:
       driver: "none"
 
     networks:
-      - kimera-net
+      - gra-net
 
 networks:
-    kimera-net:
-      name: kimera-net
+    gra-net:
+      name: gra-net
       driver: bridge
 
 volumes:
-  kimera-data:
+  gra-data:

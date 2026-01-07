@@ -1,0 +1,9 @@
+dxs: app.src.api.NotifyDXS
+auth: false
+baseSpace: api
+urlSpace: api/notify
+routes:
+  - path: /{user_id}
+    method: GET
+    action: send_notification
+    description: Trigger async notification task for a user

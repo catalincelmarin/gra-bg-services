@@ -16,6 +16,7 @@ if [ "$CELERY" = "1" ]; then
 #   poetry run celery -A app.src.ms.tasks beat --loglevel=info &
 
   print_bold_green "CELERY WORKERS ARE ON"
+  poetry run celery -A app.src.background.notifications worker -l info -E -Q notifications_q -c 1 --prefetch-multiplier=1 &
 #    poetry run celery -A app.ext.syncer.background.tasks worker -l info -E -Q workers_q -c 1 --prefetch-multiplier=1 &
 
 else

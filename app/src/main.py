@@ -1,12 +1,18 @@
 #!/usr/bin/env python
 import asyncio
 import os
+import sys
+import traceback
+
+# Add app directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import uvicorn
 from kimera.Bootstrap import Bootstrap
 from kimera.comm.Intercom import Message
 from kimera.helpers.Helpers import Helpers
 from kimera.process.Spawner import Spawner
+from src.Workers import Workers
 
 # from app.ext.bots.discord.run import jolly_run
 
@@ -18,6 +24,18 @@ async def start_services():
     Helpers.sysPrint("START","SERVICES")
 
     boot = Bootstrap(True)
+    
+    # Start COMM_QUEUE worker subprocess (non-blocking)
+    if os.getenv("COMM_QUEUE"):
+        Helpers.sysPrint("COMM_QUEUE", "STARTING")
+        spawner = Spawner()
+        spawner.loop(
+            name="comm-queue-listener",
+            coro=Workers.comm_queue_worker,
+            params={},
+            perpetual=True
+        )
+        Helpers.sysPrint("COMM_QUEUE", "STARTED")
     # Start Redis subscription
     # Spawner().start("roco", jolly_run)
     #Spawner().loop("binGram", WorkBinGram().start,{},True)
@@ -50,5 +68,14 @@ if __name__ == "__main__":
     try:
         asyncio.run(start_services())
     except Exception as e:
-        print(e)
-        Helpers.errPrint("ERROR ON STARTUP")
+        print("=" * 80)
+        print("ERROR ON STARTUP")
+        print("=" * 80)
+        print(f"Exception Type: {type(e).__name__}")
+        print(f"Exception Message: {str(e)}")
+        print("=" * 80)
+        print("Full Traceback:")
+        print("=" * 80)
+        traceback.print_exc()
+        print("=" * 80)
+        Helpers.errPrint("ERROR ON STARTUP", str(e))

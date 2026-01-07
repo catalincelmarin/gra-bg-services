@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "kimcom"
+version = "2.0.4"
+description = "common for kimera"
+authors = ["Catalin Marin"]
+readme = "README.md"
+packages = [{ include = "kimera", from="src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+#celery = "^5.4.0"
+redis = "^5.0.3"
+pymongo = "4.9.2"
+pydantic = "^2.8.2"
+fastapi = "^0.110.1"
+uvicorn = "^0.34.3"
+pyjwt = "2.8.0"
+pygments = "2.17.2"
+pyyaml = "6.0.1"
+requests = "^2.31.0"
+python-dotenv = "^1.0.1"
+python-multipart = "*"
+python-socketio = "*"
+mongoengine = "^0.29.1"
+email-validator = "*"
+passlib = "^1.7.4"
+pytz = "^2022.1"
+
+GitPython = "*"
+starlette = "^0.37.2"
+packaging = ">=24.0"
+typing-extensions = ">=4.12"
+requests-oauthlib = "*"
+
+aiofiles = "*"
+setproctitle = "*"
+pdfplumber = "^0.11.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,30 +1,17 @@
-version: "3.9"
-
 services:
   # Add other services as needed
-  kimera-redis:
+  gra-redis:
     image: redis:latest
-    container_name: kimera-redis
+    container_name: gra-redis
     restart: unless-stopped
     ports:
-      - "6379:6379"  # Expose Redis port
+      - "6380:6379"  # Expose Redis port
     logging:
       driver: "none"
     networks:
-      - kimera-net
-
-  kimera-redisinsight:
-    image: redislabs/redisinsight:latest
-    container_name: kimera-redisinsight
-    ports:
-      - "8001:5540"  # Expose RedisInsight UI port
-    networks:
-      - kimera-net
-    depends_on:
-      - kimera-redis
-    restart: unless-stopped
+      - gra-net
 
 networks:
-    kimera-net:
-      name: kimera-net
+    gra-net:
+      name: gra-net
       driver: bridge

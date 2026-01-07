@@ -1,0 +1,9 @@
+dxs: app.src.api.UsersDXS
+auth: false
+baseSpace: api
+urlSpace: api/users
+routes:
+  - path: /
+    method: GET
+    action: list_users
+    description: Get all users from PostgreSQL database

@@ -13,13 +13,17 @@ stores:
     type: files
     path: /filestore/_vectors
 #mem
-#  - name: default
-#    type: mem
-#    uri: REDIS_CACHE
+  - name: default
+    type: mem
+    uri: REDIS_CACHE
 #mongo
   - name: _root
     type: nosql
     uri: DEFAULT_STORE
+#sql
+  - name: postgres
+    type: sql
+    uri: POSTGRES_STORE
 
 # vector
 #  - name: vectorizer

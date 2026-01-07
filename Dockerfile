@@ -55,7 +55,7 @@ COPY ./README.md README.md
 COPY ./.env .env
 
 # Declare build-time arguments
-COPY ./_pyproject.toml pyproject.toml
+COPY ./pyproject.toml pyproject.toml
 #COPY poetry.lock poetry.lock
 COPY ./app /home/jazzms/app
 

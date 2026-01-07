@@ -1,0 +1,9 @@
+dxs: app.src.api.HelloDXS
+auth: false
+baseSpace: api
+urlSpace: api/hello
+routes:
+  - path: /
+    method: GET
+    action: get_hello
+    description: Simple hello world endpoint

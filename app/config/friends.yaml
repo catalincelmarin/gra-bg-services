@@ -1,4 +1,7 @@
-friends: []
+friends:
+  notifications:
+    route: app.src.background.notifications
+    queue: notifications_q
 #  datasets:
 #    route: app.ext.datasets.background.tasks
 #    queue: odapp_datasets

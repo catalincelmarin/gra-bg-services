@@ -1,0 +1,5 @@
+mailers:
+  - name: default
+    from: no-reply@frida.legal
+  - name: alkhaleej
+    from: no-reply@frida.legal

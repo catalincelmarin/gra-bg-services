@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mail"
+version = "1.0.0"
+description = "Kimera mail with resend"
+authors = ["marin <catalin@orson.ro>"]
+readme = "README.md"
+packages = [
+    { include = "mailers", from="src" }
+]
+
+[tool.poetry.dependencies]
+resend = "^2.13.0"
+
+[tool.kimp]
+extensions = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
